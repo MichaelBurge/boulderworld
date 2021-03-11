@@ -1,0 +1,354 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_YUGIOH              ICON    DISCARDABLE     "yugioh.ICO"
+IDI_SMALL               ICON    DISCARDABLE     "SMALL.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_YUGIOH MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Map Editor",                  IDM_MAP
+        MENUITEM "New",                         IDM_NEW
+        MENUITEM "Save",                        IDM_SAVE
+        MENUITEM "Load",                        IDM_LOAD
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "Map Editor"
+    BEGIN
+        POPUP "Terrain"
+        BEGIN
+            MENUITEM "Grass",                       IDM_EDITOR_GRASS
+            MENUITEM "Rocks",                       IDM_EDITOR_BOULDER
+            MENUITEM "Blank Space",                 IDM_EDITOR_BLANK
+            MENUITEM "Spike Wall",                  IDM_EDITOR_SPIKEWALL
+            MENUITEM "Fire",                        IDM_EDITOR_FIRE
+            MENUITEM "Fungus",                      IDM_EDITOR_FUNGUS
+            MENUITEM "Dark Fungus",                 IDM_EDITOR_DARKFUNGUS
+            POPUP "Transports"
+            BEGIN
+                MENUITEM "Right transport",             IDM_EDITOR_TRANSPORTRIGHT
+
+                MENUITEM "Left transport",              IDM_EDITOR_TRANSPORTLEFT
+
+                MENUITEM "Up transport",                IDM_EDITOR_TRANSPORTUP
+
+                MENUITEM "Down transport",              IDM_EDITOR_TRANSPORTDOWN
+
+            END
+            MENUITEM "Brick Wall",                  IDM_EDITOR_BRICKWALL
+            MENUITEM "Grass Generator",             IDM_EDITOR_GRASSGENERATOR
+
+            MENUITEM "Volcano",                     IDM_EDITOR_VOLCANO
+            MENUITEM "Lava",                        IDM_EDITOR_LAVA
+        END
+        POPUP "Map Actions"
+        BEGIN
+            MENUITEM "Flood map",                   IDM_EDITOR_FLOOD
+            MENUITEM "Switch Tiles",                IDM_EDITOR_SWITCHTILES
+            MENUITEM "Cut size to visible",         IDM_EDITOR_CUT
+            MENUITEM "Border",                      IDM_EDITOR_BORDER
+        END
+        POPUP "Objects"
+        BEGIN
+            POPUP "Valuables"
+            BEGIN
+                MENUITEM "Diamond",                     IDM_EDITOR_DIAMOND
+                MENUITEM "Gold bars",                   IDM_EDITOR_GOLD
+            END
+            POPUP "Bombs"
+            BEGIN
+                MENUITEM "Collectable",                 IDM_EDITOR_BOMB
+                MENUITEM "Bomb on Fire",                IDM_EDITOR_BOMBONFIRE
+
+            END
+        END
+        POPUP "Monsters"
+        BEGIN
+            MENUITEM "Ghost",                       IDM_EDITOR_GHOST
+            MENUITEM "Robot",                       IDM_EDITOR_ROBOT
+        END
+        POPUP "Placement"
+        BEGIN
+            MENUITEM "Fill",                        IDM_EDITOR_FILL
+            MENUITEM "Single tile",                 IDM_EDITOR_SINGLE
+        END
+        MENUITEM "Insert Player",               IDM_EDITOR_PLAYER
+        MENUITEM "Options",                     IDM_OPTIONS
+    END
+    MENUITEM "Run",                         IDM_RUN
+    MENUITEM "Re-draw",                     IDM_REDRAW
+    POPUP "View"
+    BEGIN
+        MENUITEM "View toolbar",                IDM_VIEW_TOOLBARON
+        MENUITEM "Hide toolbar",                IDM_VIEW_TOOLBAROFF
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_YUGIOH ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  22, 17, 230, 75
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "System"
+BEGIN
+    ICON            IDI_YUGIOH,IDC_MYICON,14,9,20,20
+    LTEXT           "Boulderworld Version 1.0",IDC_STATIC,49,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003 Michael Shoemaker",IDC_STATIC,49,20,
+                    127,8
+    DEFPUSHBUTTON   "OK",IDOK,195,6,30,11,WS_GROUP
+END
+
+IDD_OPTIONS DIALOGEX 0, 0, 162, 178
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,105,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,105,24,50,14
+    EDITTEXT        IDC_WIDTH,7,7,40,14,ES_AUTOHSCROLL | ES_NUMBER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        IDC_HEIGHT,7,41,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Width",IDC_STATIC,51,7,20,8
+    LTEXT           "Height",IDC_STATIC,51,39,22,8
+    EDITTEXT        IDC_GRAVITY,7,157,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Gravity. Put a number > 0 for true",IDC_STATIC,50,163,
+                    105,8
+    EDITTEXT        IDC_LAVA,7,96,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Time(in cycles) that the lava lasts",IDC_STATIC,50,100,
+                    105,8
+    EDITTEXT        IDC_ROCK,7,70,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "If rocks kill when they fall on you, input a number > 0",
+                    IDC_STATIC,50,69,105,23
+    EDITTEXT        IDC_SLOWDOWN,7,117,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Slowdown(in milliseconds)",IDC_STATIC,49,117,82,8
+END
+
+IDD_SWITCHTILES DIALOG DISCARDABLE  0, 0, 186, 90
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    LTEXT           "Switch all:",IDC_STATIC,7,31,33,8
+    LTEXT           "to:",IDC_STATIC,69,30,9,8
+    LISTBOX         IDC_FROM,7,43,48,40,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LISTBOX         IDC_TO,62,43,48,40,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_SAVE DIALOG DISCARDABLE  0, 0, 186, 60
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,8,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    EDITTEXT        IDC_FILE,7,39,40,14,ES_AUTOHSCROLL
+    LTEXT           "Name of File:",IDC_STATIC,7,25,42,8
+    LTEXT           "Next Scenario:",IDC_STATIC,53,22,116,8
+    LTEXT           "Leave blank if none",IDC_STATIC,51,30,64,8
+    EDITTEXT        IDC_NEXT,62,39,40,14,ES_AUTOHSCROLL
+END
+
+IDD_LOAD DIALOG DISCARDABLE  0, 0, 186, 90
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    EDITTEXT        IDC_FILE,7,18,40,14,ES_AUTOHSCROLL
+    LTEXT           "File Name:",IDC_STATIC,7,7,34,8
+END
+
+IDD_TOOLBAR DIALOGEX 0, 0, 34, 51
+STYLE DS_MODALFRAME | WS_CHILD | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         144,IDC_FILL,"Static",SS_BITMAP | SS_NOTIFY | 
+                    SS_REALSIZEIMAGE,7,7,19,17,WS_EX_DLGMODALFRAME
+    CONTROL         145,IDC_SINGLE,"Static",SS_BITMAP | SS_NOTIFY | 
+                    SS_REALSIZEIMAGE,7,27,19,17,WS_EX_DLGMODALFRAME
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 155
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_SWITCHTILES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_SAVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 8
+        BOTTOMMARGIN, 53
+    END
+
+    IDD_LOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_TOOLBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 27
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 44
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_FILL                BITMAP  DISCARDABLE     "fill.bmp"
+IDB_SINGLE              BITMAP  DISCARDABLE     "single.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_TITLE           "Boulderworld"
+    IDS_HELLO               "Hello World!"
+    IDC_BOULDER             "BOULDERWORLD"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_NEW                 "You sure?"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

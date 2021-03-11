@@ -1,0 +1,5 @@
+#define NOCARD 0
+#define CARDDOWN 0
+#define BLUEEYESWHITEDRAGON 1
+#define SUMMONEDSKULL 2
+#define DARKHOLE 3
